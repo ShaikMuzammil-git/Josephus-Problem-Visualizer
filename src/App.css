@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+/* setting up styling presets */
+
+:root {
+  --theme-color: #153e46;
+  --light-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* outline: 2px solid red; */
+  font-size: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: cursive;
+}
+
+/* ---------------------------------- App -> NavBar Component  */
+
+.navBar {
+  background-color: var(--theme-color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding-top: 2rem;
+}
+
+.navBar__navLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  background-color: black;
+  list-style: none;
+}
+
+/* ---------------------------------- App -> NavBar -> NavBtn Component */
+
+.navLink {
+  background-color: var(--theme-color);
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
   color: white;
+  transition: all 0.3s ease;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+.navLink:hover {
+  background-color: var(--light-color);
+  font-size: 2.3rem;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* ---------------------------------- App -> Container   Component */
+
+.container {
+  background-color: thistle;
+  border: 2px solid black;
+  margin: 10rem 1vw;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+  border-radius: 10px;
+}
+
+/* ---------------------------------- App -> Container -> MCQ   Component */
+.container_mcq {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+}
+/* ------------------------- App -> Container -> MCQ -> Question  Component */
+.mcq_question {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.mcq_question u {
+  font-size: 2rem;
+}
+
+/* -------------------------- App -> Container -> MCQ -> Options -> Form   */
+.mcq_optionsContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+/* -------------------------- App -> Container -> MCQ -> Options -> Form -> Label  */
+.optionsContainer_option {
+  display: block;
+  background-color: #e7f3ff;
+  border: 2px solid lightslategrey;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1.5rem auto;
+  grid-gap: 1rem;
+  cursor: pointer;
+  transition: outline 0.1s ease;
+}
+
+.optionsContainer_option:hover {
+  outline: 4px solid lightslategrey;
+}
+
+.optionsContainer_option label {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* .optionsContainer_option label:hover {
+  font-size: 2.8rem;
+  background-color: rgb(0, 0, 0);
+} */
+
+/* styling Question */
+
+/* Media querries */
+/* 
+@media (max-width: 1392px) {
+  html {
+    font-size: 10px;
   }
 }
+@media (max-width: 992px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    font-size: 8px;
+  }
+}
+ */
